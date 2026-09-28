@@ -1,0 +1,27 @@
+# 白名单单位定义（离线、最小集合）
+# 长度
+meter = [length] = m
+centimeter = 1e-2 meter = cm
+kilometer = 1000 meter = km
+
+# 时间
+second = [time] = s
+minute = 60 second = min
+hour = 3600 second = h
+
+# 质量
+gram = [mass] = g
+kilogram = 1000 gram = kg
+
+# 绝对温度（带偏移）
+kelvin = [temperature] = K
+degree_Celsius = kelvin; offset: 273.15 = degC
+degree_Fahrenheit = 5 / 9 * kelvin; offset: 233.15 + 200 / 9 = degF
+
+# 温差（普通乘法单位）。
+# pint 默认只为带偏移单位自动生成 delta_degC / delta_degF，且名为
+# delta_degree_Celsius / delta_degree_Fahrenheit；这里另取规范名 diff_*，
+# 只把 delta_* 符号挂到这些乘法单位上，避免与 pint 自动生成单位重名。
+diff_kelvin = kelvin = delta_K
+diff_degree_Celsius = kelvin = delta_degC
+diff_degree_Fahrenheit = 5 / 9 * kelvin = delta_degF
